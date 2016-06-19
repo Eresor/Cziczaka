@@ -15,9 +15,9 @@ public:
 
 	ResourceTexture& operator=(const ResourceTexture&);
 
-	ResourceTexture(std::string dir, SDL_Renderer * renderer);
+	ResourceTexture(const std::string& dir, SDL_Renderer * renderer);
 
-	bool LoadResource(std::string dir, SDL_Renderer * renderer);
+	bool LoadResource(const std::string& dir, SDL_Renderer * renderer);
 
 	bool Destroy();
 
