@@ -20,7 +20,7 @@ ResourceTexture& ResourceTexture::operator=(const ResourceTexture& other)
 	return *this;
 }
 
-ResourceTexture::ResourceTexture(std::string dir, SDL_Renderer * renderer)
+ResourceTexture::ResourceTexture(const std::string& dir, SDL_Renderer * renderer)
 	: Resource(),texture(nullptr)
 {
 	LoadResource(dir, renderer);
@@ -31,7 +31,7 @@ bool ResourceTexture::good()
 	return initialized && texture != nullptr;
 }
 
-bool ResourceTexture::LoadResource(std::string dir, SDL_Renderer * renderer)
+bool ResourceTexture::LoadResource(const std::string& dir, SDL_Renderer * renderer)
 {
 	if (initialized)
 	{
