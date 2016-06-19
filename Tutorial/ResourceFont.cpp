@@ -13,7 +13,7 @@ bool ResourceFont::LoadResource(const std::string& dir, uint heigh)
 {
 	if (initialized)
 	{
-		if (font.use_count() >= 0)
+		if (font.use_count() >0)
 		{
 			DEBUG_LOG("Trying to reinitialized font in use.");
 			return false;
