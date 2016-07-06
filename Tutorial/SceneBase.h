@@ -2,6 +2,8 @@
 #include <vector>
 #include "Renderer.h"
 
+class EventManager;
+
 class SceneObject;
 
 class SceneBase
@@ -21,11 +23,21 @@ public:
 
 	~SceneBase();
 
+	void addObject(SceneObject * obj);
+
+	void close();
+
 private:
+
+	bool markedForClose = false;
 
 	std::vector<SceneObject*> * sceneObjects;
 
 	Renderer renderer;
 	
+	void Update();
+
+	EventManager * eventManager;
+
 };
 

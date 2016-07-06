@@ -150,6 +150,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DebugLog.cpp" />
+    <ClCompile Include="EventListener.cpp" />
+    <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RenderableLine.cpp" />
     <ClCompile Include="RenderableObject.cpp" />
@@ -168,6 +170,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugLog.h" />
+    <ClInclude Include="EventListener.h" />
+    <ClInclude Include="EventManager.h" />
     <ClInclude Include="RenderableLine.h" />
     <ClInclude Include="RenderableObject.h" />
     <ClInclude Include="RenderablePoint.h" />

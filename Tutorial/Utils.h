@@ -2,6 +2,11 @@
 #include <SDL.h>
 typedef unsigned int uint;
 
+#define SDL_BUTTON_ID_TYPE Sint32
+
+#define KEY_ SDL_SCANCODE_
+
+
 struct Color
 {
 	union 

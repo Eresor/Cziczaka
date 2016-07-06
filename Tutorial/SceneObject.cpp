@@ -1,9 +1,10 @@
 #include "SceneObject.h"
 
 
-
-SceneObject::SceneObject()
+SceneObject::SceneObject(SceneBase * sc)
+	:parentScene(sc)
 {
+	sc->addObject(this);
 }
 
 
