@@ -8,13 +8,13 @@ class ResourceFont :
 {
 public:
 
-	ResourceFont(const std::string& dir, uint heigh);
+	ResourceFont(std::string dir, uint heigh);
 
 	ResourceFont(ResourceFont&);
 
 	ResourceFont& operator=(ResourceFont&);
 
-	bool LoadResource(const std::string& dir, uint heigh);
+	bool LoadResource(std::string dir, uint heigh);
 
 	~ResourceFont();
 	

@@ -20,7 +20,7 @@ ResourceTexture& ResourceTexture::operator=(const ResourceTexture& other)
 	return *this;
 }
 
-ResourceTexture::ResourceTexture(const std::string& dir, SDL_Renderer * renderer)
+ResourceTexture::ResourceTexture(std::string dir, SDL_Renderer * renderer)
 	: Resource(),texture(nullptr)
 {
 	LoadResource(dir, renderer);
@@ -31,7 +31,7 @@ bool ResourceTexture::good()
 	return initialized && texture != nullptr;
 }
 
-bool ResourceTexture::LoadResource(const std::string& dir, SDL_Renderer * renderer)
+bool ResourceTexture::LoadResource(std::string dir, SDL_Renderer * renderer)
 {
 	if (initialized)
 	{
@@ -60,7 +60,7 @@ bool ResourceTexture::LoadResource(const std::string& dir, SDL_Renderer * render
 
 bool ResourceTexture::Destroy()
 {
-	if (initialized && texture.unique())
+	if (initialized && texture.use_count() == 0)
 	{
 		SDL_DestroyTexture(texture.get());
 		texture.reset();
@@ -68,7 +68,7 @@ bool ResourceTexture::Destroy()
 	}
 	else
 	{
-		DEBUG_LOG("Trying to destroy texture with more than one references");
+		DEBUG_LOG("Trying to destroy texture with more than zero references");
 		return false;
 	}
 }

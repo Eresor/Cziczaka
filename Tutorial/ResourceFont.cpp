@@ -2,18 +2,18 @@
 
 
 
-ResourceFont::ResourceFont(const std::string& dir, uint h)
+ResourceFont::ResourceFont(std::string dir, uint h)
 	:height(h)
 {
 	LoadResource(dir, h);
 }
 
 
-bool ResourceFont::LoadResource(const std::string& dir, uint heigh)
+bool ResourceFont::LoadResource(std::string dir, uint heigh)
 {
 	if (initialized)
 	{
-		if (font.use_count() >0)
+		if (font.use_count() >= 0)
 		{
 			DEBUG_LOG("Trying to reinitialized font in use.");
 			return false;
@@ -50,7 +50,7 @@ bool ResourceFont::good()
 
 bool ResourceFont::Destroy()
 {
-	if (initialized && font.unique())
+	if (initialized && font.use_count() == 0)
 	{
 		TTF_CloseFont(font.get());
 		font.reset();
@@ -58,7 +58,7 @@ bool ResourceFont::Destroy()
 	}
 	else
 	{
-		DEBUG_LOG("Trying to destroy texture with more than one references");
+		DEBUG_LOG("Trying to destroy texture with more than zero references");
 		return false;
 	}
 }

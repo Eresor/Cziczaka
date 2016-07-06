@@ -7,13 +7,13 @@ class ResourceFontTexture :
 {
 public:
 
-	ResourceFontTexture(const std::string& text, ResourceFont font, SDL_Renderer * renderer, Color color);
+	ResourceFontTexture(std::string text, ResourceFont font, SDL_Renderer * renderer, Color color);
 	
 	ResourceFontTexture(const ResourceFontTexture&);
 
 	ResourceFontTexture& operator=(const ResourceFontTexture&);
 
-	bool LoadResource(const std::string& text, ResourceFont font, SDL_Renderer * renderer, Color color);
+	bool LoadResource(std::string text, ResourceFont font, SDL_Renderer * renderer, Color color);
 	
 	~ResourceFontTexture();
 

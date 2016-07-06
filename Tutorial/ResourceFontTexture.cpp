@@ -2,13 +2,13 @@
 
 
 
-ResourceFontTexture::ResourceFontTexture(const std::string& t, ResourceFont font, SDL_Renderer * renderer, Color color)
+ResourceFontTexture::ResourceFontTexture(std::string t, ResourceFont font, SDL_Renderer * renderer, Color color)
 	:text(t)
 {
 	LoadResource(t, font, renderer, color);
 }
 
-bool ResourceFontTexture::LoadResource(const std::string& text, ResourceFont font, SDL_Renderer * renderer, Color color)
+bool ResourceFontTexture::LoadResource(std::string text, ResourceFont font, SDL_Renderer * renderer, Color color)
 {
 	if (initialized)
 	{
