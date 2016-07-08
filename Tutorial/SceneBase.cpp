@@ -2,7 +2,7 @@
 #include "SceneObject.h"
 #include "EventManager.h"
 
-SceneBase::SceneBase(Renderer rendererArg)
+SceneBase::SceneBase(Renderer& rendererArg)
 	:renderer(rendererArg)
 {
 	eventManager = new EventManager(this);

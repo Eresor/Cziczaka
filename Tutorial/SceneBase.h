@@ -11,7 +11,7 @@ class SceneBase
 
 public:
 
-	SceneBase(Renderer renderer);
+	SceneBase(Renderer& renderer);
 
 	void baseInit();
 
@@ -33,7 +33,7 @@ private:
 
 	std::vector<SceneObject*> * sceneObjects;
 
-	Renderer renderer;
+	Renderer& renderer;
 	
 	void Update();
 
