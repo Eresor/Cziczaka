@@ -19,6 +19,11 @@ void RenderableRectangle::Render(Renderer  * renderer)
 	SDL_RenderDrawRect(renderer->getSDLRenderer(), &rect);
 }
 
+RenderableObject * RenderableRectangle::clone()
+{
+	return new RenderableRectangle(*this);
+}
+
 RenderableRectangle::~RenderableRectangle()
 {
 }
@@ -33,6 +38,11 @@ void RenderableRectangleFilled::Render(Renderer *  renderer)
 	SDL_SetRenderDrawColor(renderer->getSDLRenderer(), baseColor.r, baseColor.g, baseColor.b, baseColor.a);
 	SDL_Rect rect = { position.x,position.y,size.x,size.y };
 	SDL_RenderFillRect(renderer->getSDLRenderer(), &rect);
+}
+
+RenderableObject * RenderableRectangleFilled::clone()
+{
+	return new RenderableRectangleFilled(*this);
 }
 
 RenderableRectangleFilled::~RenderableRectangleFilled()

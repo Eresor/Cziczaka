@@ -1,21 +1,22 @@
 #pragma once
 #include <vector>
+#include "Utils.h"
 #include "Renderer.h"
 
 class EventManager;
 
 class SceneObject;
 
+class SceneRenderManager;
+
 class SceneBase
 {
 
 public:
 
-	SceneBase(Renderer& renderer);
+	SceneBase(Renderer& rendererArg, Vec2<uint> sceneWindowSize);
 
 	void baseInit();
-
-	std::vector<RenderableObject*> collect();
 
 	virtual void init()=0;
 
@@ -23,21 +24,21 @@ public:
 
 	~SceneBase();
 
-	void addObject(SceneObject * obj);
-
 	void close();
+
+	void registerSceneObject(SceneObject *);
 
 private:
 
 	bool markedForClose = false;
 
 	std::vector<SceneObject*> * sceneObjects;
-
-	Renderer& renderer;
 	
 	void Update();
 
 	EventManager * eventManager;
+
+	SceneRenderManager * renderManager;
 
 };
 

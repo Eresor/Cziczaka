@@ -11,7 +11,9 @@ public:
 	
 	ResourceFontTexture(const ResourceFontTexture&);
 
-	ResourceFontTexture& operator=(const ResourceFontTexture&);
+	ResourceFontTexture(ResourceFontTexture&&);
+
+	ResourceFontTexture& operator=(const ResourceFontTexture);
 
 	bool LoadResource(const std::string& text, ResourceFont font, SDL_Renderer * renderer, Color color);
 	
@@ -19,5 +21,7 @@ public:
 
 private:
 	std::string text;
+
+	static void swap(ResourceFontTexture r1, ResourceFontTexture r2);
 };
 

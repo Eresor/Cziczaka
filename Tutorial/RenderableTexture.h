@@ -12,6 +12,7 @@ public:
 
 	Vec2<uint> center();
 
+	RenderableObject * clone();
 
 	virtual void Render(Renderer  * renderer);
 

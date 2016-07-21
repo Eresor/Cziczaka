@@ -21,3 +21,8 @@ void RenderableLine::Render(Renderer *  renderer)
 	SDL_SetRenderDrawColor(renderer->getSDLRenderer(), baseColor.r, baseColor.g, baseColor.b, baseColor.a);
 	SDL_RenderDrawLine(renderer->getSDLRenderer(), position.x, position.y, positionEnd.x, positionEnd.y);
 }
+
+RenderableObject * RenderableLine::clone()
+{
+	return new RenderableLine(*this);
+}

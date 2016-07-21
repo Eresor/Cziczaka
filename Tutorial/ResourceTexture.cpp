@@ -13,10 +13,14 @@ ResourceTexture::ResourceTexture(const ResourceTexture& other)
 	initialized = other.initialized;
 }
 
-ResourceTexture& ResourceTexture::operator=(const ResourceTexture& other)
+ResourceTexture::ResourceTexture(ResourceTexture && other)
 {
-	texture = other.texture;
-	initialized = other.initialized;
+	ResourceTexture::swap(*this, other);
+}
+
+ResourceTexture& ResourceTexture::operator=(ResourceTexture other)
+{
+	ResourceTexture::swap(*this, other);
 	return *this;
 }
 
@@ -80,4 +84,10 @@ SDL_Texture * ResourceTexture::getTexture()
 
 ResourceTexture::~ResourceTexture()
 {
+}
+
+void ResourceTexture::swap(ResourceTexture& r1, ResourceTexture& r2)
+{
+	Resource::swap(r1, r2);
+	r1.texture.swap(r2.texture);
 }

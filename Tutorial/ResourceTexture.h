@@ -13,7 +13,9 @@ public:
 
 	ResourceTexture(const ResourceTexture&);
 
-	ResourceTexture& operator=(const ResourceTexture&);
+	ResourceTexture(ResourceTexture&&);
+
+	ResourceTexture& operator=(ResourceTexture);
 
 	ResourceTexture(const std::string& dir, SDL_Renderer * renderer);
 
@@ -29,5 +31,7 @@ public:
 
 protected:
 	std::shared_ptr <SDL_Texture> texture;
+
+	static void swap(ResourceTexture& r1, ResourceTexture& r2);
 };
 

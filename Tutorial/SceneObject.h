@@ -2,17 +2,22 @@
 #include "RenderableObject.h"
 #include "SceneBase.h"
 
-class SceneObject : RenderableObject
+class SceneObject
 {
 public:
-	SceneObject(SceneBase * sc);
+	SceneObject();
 	
 	~SceneObject();
 
-	virtual void Update()=0;
+	virtual void Update();
 
-private:
+	Vec2<float> getPosition();
 
-	SceneBase * parentScene;
+	void setPosition(Vec2<float>);
+
+protected:
+
+
+	Vec2<float> position;
 };
 

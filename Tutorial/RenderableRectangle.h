@@ -13,6 +13,8 @@ public:
 
 	virtual void Render(Renderer *  renderer);
 
+	RenderableObject * clone();
+
 private:
 
 	Vec2 <uint> size;
@@ -31,6 +33,8 @@ public:
 	~RenderableRectangleFilled();
 
 	virtual void Render(Renderer *  renderer);
+
+	RenderableObject * clone();
 
 protected:
 	

@@ -2,9 +2,8 @@
 #include "EventManager.h"
 
 
-EventListener::EventListener(EventManager * em)
+EventListener::EventListener()
 {
-	em->regiesterListener(this);
 }
 
 

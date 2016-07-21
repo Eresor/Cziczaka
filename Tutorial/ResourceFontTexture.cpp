@@ -40,15 +40,24 @@ ResourceFontTexture::ResourceFontTexture(const ResourceFontTexture& other)
 	initialized = other.initialized;
 }
 
-ResourceFontTexture& ResourceFontTexture::operator=(const ResourceFontTexture& other)
+ResourceFontTexture::ResourceFontTexture(ResourceFontTexture && other)
 {
-	texture = other.texture;
-	text = other.text;
-	initialized = other.initialized;
+	ResourceFontTexture::swap(*this, other);
+}
+
+ResourceFontTexture& ResourceFontTexture::operator=(const ResourceFontTexture other)
+{
+	ResourceFontTexture::swap(*this, other);
 	return *this;
 }
 
 ResourceFontTexture::~ResourceFontTexture()
 {
 
+}
+
+void ResourceFontTexture::swap(ResourceFontTexture r1, ResourceFontTexture r2)
+{
+	ResourceTexture::swap(r1, r2);
+	std::swap(r1.text, r2.text);
 }

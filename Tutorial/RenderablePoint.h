@@ -10,6 +10,8 @@ public:
 	_forceinline Vec2<uint> center();
 
 	virtual void Render(Renderer *  renderer);
+
+	RenderableObject * clone();
 	
 	~RenderablePoint();
 };

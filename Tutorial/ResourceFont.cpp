@@ -36,16 +36,27 @@ ResourceFont::ResourceFont(ResourceFont& res)
 	initialized = res.initialized;
 }
 
-ResourceFont& ResourceFont::operator=(ResourceFont& res)
+ResourceFont::ResourceFont(ResourceFont && other)
 {
-	initialized = res.initialized;
-	font = res.font;
+	ResourceFont::swap(*this, other);
+}
+
+ResourceFont& ResourceFont::operator=(ResourceFont res)
+{
+	ResourceFont::swap(*this, res);
 	return *this;
 }
 
 bool ResourceFont::good()
 {
 	return initialized;
+}
+
+void ResourceFont::swap(ResourceFont & r1, ResourceFont & r2)
+{
+	Resource::swap(r1, r2);
+	r1.font.swap(r2.font);
+	std::swap(r1.height, r2.height);
 }
 
 bool ResourceFont::Destroy()

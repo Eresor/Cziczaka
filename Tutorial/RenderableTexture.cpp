@@ -19,6 +19,11 @@ Vec2<uint> RenderableTexture::center()
 	return Vec2<uint>(position.x + size.x / 2, position.y + size.y / 2);
 }
 
+RenderableObject * RenderableTexture::clone()
+{
+	return new RenderableTexture(*this);
+}
+
 
 RenderableTexture::~RenderableTexture()
 {

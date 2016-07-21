@@ -9,6 +9,8 @@ public:
 	virtual Vec2<uint> center();
 
 	virtual void Render(Renderer * renderer);
+
+	RenderableObject * clone();
 	
 	~RenderableLine();
 

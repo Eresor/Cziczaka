@@ -22,3 +22,8 @@ void RenderablePoint::Render(Renderer  * renderer)
 	SDL_SetRenderDrawColor(renderer->getSDLRenderer(), baseColor.r, baseColor.g, baseColor.b, baseColor.a);
 	SDL_RenderDrawPoint(renderer->getSDLRenderer(), position.x, position.y);
 }
+
+RenderableObject * RenderablePoint::clone()
+{
+	return new RenderablePoint(*this);
+}

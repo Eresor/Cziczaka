@@ -1,13 +1,26 @@
 #include "SceneObject.h"
 
 
-SceneObject::SceneObject(SceneBase * sc)
-	:parentScene(sc)
+SceneObject::SceneObject()
 {
-	sc->addObject(this);
+	
 }
 
 
 SceneObject::~SceneObject()
 {
+}
+
+void SceneObject::Update()
+{
+}
+
+Vec2<float> SceneObject::getPosition()
+{
+	return position;
+}
+
+void SceneObject::setPosition(Vec2<float> pos)
+{
+	this->position = pos;
 }

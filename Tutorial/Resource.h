@@ -19,5 +19,7 @@ protected:
 	bool initialized;
 
 	std::string directory;
+
+	static void swap(Resource& r1, Resource& r2);
 };
 

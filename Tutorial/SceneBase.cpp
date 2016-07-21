@@ -1,11 +1,12 @@
 #include "SceneBase.h"
-#include "SceneObject.h"
+#include "SceneRenderableObject.h"
 #include "EventManager.h"
+#include "SceneRenderManager.h"
 
-SceneBase::SceneBase(Renderer& rendererArg)
-	:renderer(rendererArg)
+SceneBase::SceneBase(Renderer& rendererArg, Vec2<uint> sceneWindowSize)
 {
 	eventManager = new EventManager(this);
+	renderManager = new SceneRenderManager(rendererArg,sceneWindowSize );
 }
 
 void SceneBase::baseInit()
@@ -13,17 +14,6 @@ void SceneBase::baseInit()
 	sceneObjects = new std::vector<SceneObject*>();
 
 	init();
-}
-
-std::vector<RenderableObject *> SceneBase::collect()
-{
-	std::vector<RenderableObject *> ret;
-	//process position into screen position
-	for (auto obj : *sceneObjects)
-	{
-		ret.push_back((RenderableObject *)obj);
-	}
-	return ret;
 }
 
 bool SceneBase::run()
@@ -54,7 +44,7 @@ bool SceneBase::run()
 		}
 		interpolation = float(SDL_GetTicks() + SkipTicks - nextTicks) / float(SkipTicks);
 		// render with interpolation
-		renderer.Render(collect());
+		renderManager->render();
 	}
 	return true;
 }
@@ -85,14 +75,29 @@ SceneBase::~SceneBase()
 	{
 		delete eventManager;
 	}
-}
-
-void SceneBase::addObject(SceneObject * obj)
-{
-	sceneObjects->push_back(obj);
+	if (renderManager != nullptr)
+	{
+		delete renderManager;
+	}
 }
 
 void SceneBase::close()
 {
 	markedForClose = true;
+}
+
+void SceneBase::registerSceneObject(SceneObject * obj)
+{
+	SceneRenderableObject * ren = dynamic_cast<SceneRenderableObject *>(obj);
+	if (ren)
+	{
+		renderManager->registerObject(ren);
+	}
+
+	EventListener * el = dynamic_cast<EventListener *>(obj);
+	if (el)
+	{
+		eventManager->regiesterListener(el);
+	}
+
 }

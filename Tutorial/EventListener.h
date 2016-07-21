@@ -7,7 +7,7 @@ class EventListener
 {
 public:
 
-	EventListener(EventManager * em);
+	EventListener();
 
 	~EventListener();
 

@@ -20,3 +20,23 @@ RenderableObject::RenderableObject(uint x, uint y, Color color)
 RenderableObject::~RenderableObject()
 {
 }
+
+Vec2<uint> RenderableObject::getPosition()
+{
+	return position;
+}
+
+void RenderableObject::setPosition(Vec2<uint>)
+{
+	this->position = position;
+}
+
+void RenderableObject::setScale(Vec2<float> scale)
+{
+	this->scale = scale;
+}
+
+Vec2<float> RenderableObject::getScale()
+{
+	return scale;
+}
