@@ -16,7 +16,7 @@ class Window
 {
 public:
 
-	Window(std::string name, uint w, uint h, WindowProperties props);
+	Window(std::string name, int w, int h, WindowProperties props);
 
 	Window(const Window&);
 

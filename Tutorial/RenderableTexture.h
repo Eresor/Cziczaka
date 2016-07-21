@@ -6,15 +6,17 @@ class RenderableTexture :
 {
 public:
 
-	RenderableTexture(Vec2<uint> pos, ResourceTexture texture, float a=0.0, Uint8 alpha=255);
+	RenderableTexture(Vec2<int> pos, ResourceTexture texture, float a=0.0, Uint8 alpha=255);
 
 	~RenderableTexture();
 
-	Vec2<uint> center();
+	Vec2<int> center();
 
 	RenderableObject * clone();
 
 	virtual void Render(Renderer  * renderer);
+
+	Vec2<int> getSize();
 
 protected:
 
@@ -24,7 +26,7 @@ protected:
 
 	Uint8 alpha;
 
-	Vec2<uint> size;
+	Vec2<int> size;
 
 	Uint32 format;
 

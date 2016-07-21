@@ -1,7 +1,7 @@
 #include "RenderableTexture.h"
 
 
-RenderableTexture::RenderableTexture(Vec2<uint> pos, ResourceTexture texture, float a, Uint8 alph)
+RenderableTexture::RenderableTexture(Vec2<int> pos, ResourceTexture texture, float a, Uint8 alph)
 	:RenderableObject(pos), texture(texture),alpha(alph),angle(a)
 {
 	int access;
@@ -14,9 +14,9 @@ RenderableTexture::RenderableTexture(Vec2<uint> pos, ResourceTexture texture, fl
 }
 
 
-Vec2<uint> RenderableTexture::center()
+Vec2<int> RenderableTexture::center()
 {
-	return Vec2<uint>(position.x + size.x / 2, position.y + size.y / 2);
+	return Vec2<int>(position.x + size.x / 2, position.y + size.y / 2);
 }
 
 RenderableObject * RenderableTexture::clone()
@@ -33,9 +33,14 @@ void RenderableTexture::Render(Renderer  * renderer)
 {
 	SDL_SetTextureAlphaMod(texture.getTexture(), alpha);
 	SDL_Rect source = { 0,0,size.x,size.y };
-	SDL_Rect dest = { position.x, position.y, size.x, size.y };
-	Vec2<uint> cen = center();
+	SDL_Rect dest = { position.x, position.y, size.x*scale.x, size.y*scale.x };
+	Vec2<int> cen = center();
 	SDL_Point center = { cen.x, cen.y };
 	SDL_RenderCopyEx(renderer->getSDLRenderer(), texture.getTexture(), &source, &dest, angle, &center, SDL_FLIP_NONE);
+}
+
+Vec2<int> RenderableTexture::getSize()
+{
+	return Vec2<int>(size.x*scale.x,size.y*scale.y);
 }
 

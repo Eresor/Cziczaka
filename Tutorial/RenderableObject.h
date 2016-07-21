@@ -9,11 +9,11 @@ public:
 	/*memory management todo*/
 	RenderableObject();
 
-	RenderableObject(Vec2 <uint> position, Color color = Color::COLOR_BLACK);
+	RenderableObject(Vec2 <int> position, Color color = Color::COLOR_BLACK);
 
-	RenderableObject(uint x, uint y, Color color= Color::COLOR_BLACK);
+	RenderableObject(int x, int y, Color color= Color::COLOR_BLACK);
 	
-	virtual Vec2 <uint> center()=0;
+	virtual Vec2 <int> center()=0;
 
 	virtual void Render(Renderer * renderer)=0;
 
@@ -21,21 +21,21 @@ public:
 
 	virtual RenderableObject * clone() = 0;
 
-	virtual Vec2<uint> getPosition();
+	virtual Vec2<int> getPosition();
 
-	virtual void setPosition(Vec2<uint>);
+	virtual void setPosition(Vec2<int>);
 
 	void setScale(Vec2<float> scale);
 
 	Vec2<float> getScale();
 
-	virtual Vec2<uint> getSize()=0;
+	virtual Vec2<int> getSize()=0;
 
 protected:
 
 	Color baseColor;
 
-	Vec2 <uint> position;
+	Vec2 <int> position;
 
 	Vec2 <float> scale;
 };

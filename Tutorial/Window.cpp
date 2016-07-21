@@ -1,6 +1,6 @@
 #include "Window.h"
 
-Window::Window(std::string name, uint w, uint h, WindowProperties props)
+Window::Window(std::string name, int w, int h, WindowProperties props)
 	:window(SDL_CreateWindow(name.c_str(),SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,w,h,props))
 {
 	this->renderer = new Renderer(window);

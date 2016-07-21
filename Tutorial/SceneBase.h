@@ -14,7 +14,7 @@ class SceneBase
 
 public:
 
-	SceneBase(Renderer& rendererArg, Vec2<uint> sceneWindowSize);
+	SceneBase(Renderer& rendererArg, Vec2<int> sceneWindowSize);
 
 	void baseInit();
 

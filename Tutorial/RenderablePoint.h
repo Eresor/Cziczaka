@@ -5,13 +5,15 @@ class RenderablePoint :
 {
 public:
 
-	RenderablePoint(Vec2<uint> vec, Color color);
+	RenderablePoint(Vec2<int> vec, Color color);
 
-	_forceinline Vec2<uint> center();
+	_forceinline Vec2<int> center();
 
 	virtual void Render(Renderer *  renderer);
 
 	RenderableObject * clone();
+
+	Vec2<int> getSize();
 	
 	~RenderablePoint();
 };

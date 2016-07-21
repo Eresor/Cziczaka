@@ -8,7 +8,7 @@ class ResourceFont :
 {
 public:
 
-	ResourceFont(const std::string& dir, uint heigh);
+	ResourceFont(const std::string& dir, int heigh);
 
 	ResourceFont(ResourceFont&);
 
@@ -16,7 +16,7 @@ public:
 
 	ResourceFont& operator=(ResourceFont);
 
-	bool LoadResource(const std::string& dir, uint heigh);
+	bool LoadResource(const std::string& dir, int heigh);
 
 	~ResourceFont();
 	
@@ -29,7 +29,7 @@ public:
 private:
 	std::shared_ptr<TTF_Font> font;
 
-	uint height;
+	int height;
 
 	static void swap(ResourceFont&, ResourceFont&);
 };

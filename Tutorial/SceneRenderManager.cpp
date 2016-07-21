@@ -2,8 +2,8 @@
 
 
 
-SceneRenderManager::SceneRenderManager(Renderer& render, Vec2<uint> windowSize)
-	:renderer(render)
+SceneRenderManager::SceneRenderManager(Renderer& render, Vec2<int> windowSize)
+	:renderer(render),mainCamera(windowSize)
 {
 
 }

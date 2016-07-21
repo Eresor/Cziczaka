@@ -2,12 +2,12 @@
 
 
 
-RenderablePoint::RenderablePoint(Vec2<uint> vec, Color color)
+RenderablePoint::RenderablePoint(Vec2<int> vec, Color color)
 	:RenderableObject(vec, color)
 {
 }
 
-_forceinline Vec2<uint> RenderablePoint::center()
+_forceinline Vec2<int> RenderablePoint::center()
 {
 	return position;
 };
@@ -26,4 +26,9 @@ void RenderablePoint::Render(Renderer  * renderer)
 RenderableObject * RenderablePoint::clone()
 {
 	return new RenderablePoint(*this);
+}
+
+Vec2<int> RenderablePoint::getSize()
+{
+	return Vec2<int>(1,1);
 }

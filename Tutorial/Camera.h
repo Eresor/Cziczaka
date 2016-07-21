@@ -9,7 +9,7 @@ class Camera
 {
 public:
 
-	Camera();
+	Camera(Vec2<int> cWindowSize);
 
 	~Camera();
 
@@ -17,12 +17,14 @@ public:
 
 protected:
 
-	Vec2<uint> sceneToCameraPosition(Vec2<float> position);
+	Vec2<int> sceneToCameraPosition(Vec2<float> position);
 
 	Vec2<float> position;
 
+	Vec2<int> cameraWindowSize;
+
 	float scale;
 
-	bool isInsideCameraBox(Vec2<float> position, Vec2<float> size);
+	bool isInsideCameraBox(Vec2<int> position, Vec2<int> size);
 };
 

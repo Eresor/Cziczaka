@@ -2,14 +2,14 @@
 
 
 
-ResourceFont::ResourceFont(const std::string& dir, uint h)
+ResourceFont::ResourceFont(const std::string& dir, int h)
 	:height(h)
 {
 	LoadResource(dir, h);
 }
 
 
-bool ResourceFont::LoadResource(const std::string& dir, uint heigh)
+bool ResourceFont::LoadResource(const std::string& dir, int heigh)
 {
 	if (initialized)
 	{

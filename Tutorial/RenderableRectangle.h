@@ -5,19 +5,21 @@ class RenderableRectangle :
 {
 public:
 
-	RenderableRectangle(Vec2 <uint> pos, Vec2<uint> sizeArg, Color color);
+	RenderableRectangle(Vec2 <int> pos, Vec2<int> sizeArg, Color color);
 
-	Vec2 <uint> center();
+	Vec2 <int> center();
 	
 	~RenderableRectangle();
 
 	virtual void Render(Renderer *  renderer);
 
+	Vec2<int> getSize();
+
 	RenderableObject * clone();
 
 private:
 
-	Vec2 <uint> size;
+	Vec2 <int> size;
 
 };
 
@@ -26,9 +28,9 @@ class RenderableRectangleFilled :
 {
 public:
 
-	RenderableRectangleFilled(Vec2 <uint> pos, Vec2<uint> sizeArg, Color color, Color fillColorArg);
+	RenderableRectangleFilled(Vec2 <int> pos, Vec2<int> sizeArg, Color color, Color fillColorArg);
 
-	Vec2 <uint> center();
+	Vec2 <int> center();
 
 	~RenderableRectangleFilled();
 
@@ -36,9 +38,11 @@ public:
 
 	RenderableObject * clone();
 
+	Vec2<int> getSize();
+
 protected:
 	
-	Vec2 <uint> size;
+	Vec2 <int> size;
 
 	Color fillColor;
 };

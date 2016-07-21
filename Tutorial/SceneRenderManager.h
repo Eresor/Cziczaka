@@ -8,7 +8,7 @@ class SceneRenderManager
 {
 public:
 
-	SceneRenderManager(Renderer& render, Vec2<uint> windowSize);
+	SceneRenderManager(Renderer& render, Vec2<int> windowSize);
 	
 	~SceneRenderManager();
 

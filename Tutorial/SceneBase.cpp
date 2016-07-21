@@ -3,7 +3,7 @@
 #include "EventManager.h"
 #include "SceneRenderManager.h"
 
-SceneBase::SceneBase(Renderer& rendererArg, Vec2<uint> sceneWindowSize)
+SceneBase::SceneBase(Renderer& rendererArg, Vec2<int> sceneWindowSize)
 {
 	eventManager = new EventManager(this);
 	renderManager = new SceneRenderManager(rendererArg,sceneWindowSize );

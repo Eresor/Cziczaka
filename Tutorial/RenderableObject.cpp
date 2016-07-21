@@ -7,12 +7,12 @@ RenderableObject::RenderableObject()
 {
 }
 
-RenderableObject::RenderableObject(Vec2 <uint> vec, Color color)
+RenderableObject::RenderableObject(Vec2 <int> vec, Color color)
 	:position(vec),baseColor(color)
 {
 }
 
-RenderableObject::RenderableObject(uint x, uint y, Color color)
+RenderableObject::RenderableObject(int x, int y, Color color)
 	: position(x, y), baseColor(color)
 {
 }
@@ -21,12 +21,12 @@ RenderableObject::~RenderableObject()
 {
 }
 
-Vec2<uint> RenderableObject::getPosition()
+Vec2<int> RenderableObject::getPosition()
 {
 	return position;
 }
 
-void RenderableObject::setPosition(Vec2<uint>)
+void RenderableObject::setPosition(Vec2<int>)
 {
 	this->position = position;
 }
