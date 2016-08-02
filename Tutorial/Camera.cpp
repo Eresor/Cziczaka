@@ -3,7 +3,7 @@
 
 
 Camera::Camera(Vec2<int> cWindowSize)
-	:cameraWindowSize(cWindowSize)
+	:cameraWindowSize(cWindowSize),scale(1.0f)
 {
 }
 
@@ -12,7 +12,7 @@ Camera::~Camera()
 {
 }
 
-void Camera::collect(std::vector<SceneRenderableObject*>& renderableObjects, std::vector<RenderableObject*> collected)
+void Camera::collect(std::vector<SceneRenderableObject*>& renderableObjects, std::vector<RenderableObject*>& collected)
 {
 	for (auto obj : renderableObjects)
 	{
@@ -26,9 +26,29 @@ void Camera::collect(std::vector<SceneRenderableObject*>& renderableObjects, std
 	}
 }
 
+void Camera::setScale(float scale)
+{
+	this->scale = scale;
+}
+
+void Camera::setPosition(Vec2<float> pos)
+{
+	this->position = pos;
+}
+
+Vec2<float> Camera::getPosition()
+{
+	return position;
+}
+
+float Camera::getScale()
+{
+	return scale;
+}
+
 Vec2<int> Camera::sceneToCameraPosition(Vec2<float> objectPosition)
 {
-	return Vec2<int>(scale*(objectPosition.x-position.x),scale*(objectPosition.y-position.y));
+	return Vec2<int>(scale*(objectPosition.x-position.x),(-1)*scale*(objectPosition.y-position.y));
 }
 
 bool Camera::isInsideCameraBox(Vec2<int> position, Vec2<int> size)

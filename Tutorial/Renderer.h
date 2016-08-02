@@ -15,7 +15,7 @@ public:
 
 	SDL_Renderer * getSDLRenderer();
 
-	void Render(std::vector<RenderableObject *>);
+	void Render(std::vector<RenderableObject *>&);
 
 private:
 

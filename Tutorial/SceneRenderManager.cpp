@@ -26,6 +26,11 @@ void SceneRenderManager::registerObject(SceneRenderableObject* obj)
 	renderableObjects.push_back(obj);
 }
 
+Camera & SceneRenderManager::getCamera()
+{
+	return mainCamera;
+}
+
 void SceneRenderManager::collect()
 {
 	mainCamera.collect(renderableObjects, collected);

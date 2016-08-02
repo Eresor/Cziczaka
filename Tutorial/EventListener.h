@@ -11,7 +11,16 @@ public:
 
 	~EventListener();
 
-	virtual void KeyDown(SDL_BUTTON_ID_TYPE)=0;
+	virtual void KeyDown(SDL_BUTTON_ID_TYPE);
+
+	virtual void MouseDown(int button, Vec2<int> position);
+
+	virtual void MouseUp(int button, Vec2<int> position);
+
+	virtual void MouseScroll(int direction);
+
+	virtual void MouseMove(Vec2<int> position);
 
 };
+
 

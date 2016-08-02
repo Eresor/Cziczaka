@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraMotionObject.cpp" />
     <ClCompile Include="DebugLog.cpp" />
     <ClCompile Include="EventListener.cpp" />
     <ClCompile Include="EventManager.cpp" />
@@ -169,14 +170,17 @@
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="ResourceTexture.cpp" />
     <ClCompile Include="SceneBase.cpp" />
+    <ClCompile Include="SceneListenerObject.cpp" />
     <ClCompile Include="SceneObject.cpp" />
     <ClCompile Include="SceneRenderableObject.cpp" />
     <ClCompile Include="SceneRenderManager.cpp" />
+    <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraMotionObject.h" />
     <ClInclude Include="DebugLog.h" />
     <ClInclude Include="EventListener.h" />
     <ClInclude Include="EventManager.h" />
@@ -192,9 +196,11 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="ResourceTexture.h" />
     <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="SceneListenerObject.h" />
     <ClInclude Include="SceneObject.h" />
     <ClInclude Include="SceneRenderableObject.h" />
     <ClInclude Include="SceneRenderManager.h" />
+    <ClInclude Include="TestScene.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

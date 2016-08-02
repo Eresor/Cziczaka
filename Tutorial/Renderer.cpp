@@ -21,7 +21,7 @@ SDL_Renderer * Renderer::getSDLRenderer()
 	return renderer;
 }
 
-void Renderer::Render(std::vector<RenderableObject *> objects)
+void Renderer::Render(std::vector<RenderableObject *>& objects)
 {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderClear(renderer);

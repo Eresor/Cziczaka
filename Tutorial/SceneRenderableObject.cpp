@@ -2,7 +2,7 @@
 
 
 SceneRenderableObject::SceneRenderableObject(RenderableObject *&& obj)
-	:renderableObject(obj),SceneObject()
+	:renderableObject(obj),SceneObject(), scale(1.0f, 1.0f)
 {
 
 }

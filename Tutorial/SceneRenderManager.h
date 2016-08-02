@@ -16,6 +16,8 @@ public:
 
 	void registerObject(SceneRenderableObject* obj);
 
+	Camera& getCamera();
+
 private:
 
 	Renderer& renderer;

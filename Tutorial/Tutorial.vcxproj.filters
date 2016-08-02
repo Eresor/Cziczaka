@@ -111,6 +111,15 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneListenerObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraMotionObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DebugLog.h">
@@ -174,6 +183,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneListenerObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraMotionObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

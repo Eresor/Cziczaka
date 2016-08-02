@@ -29,11 +29,11 @@ bool SceneBase::run()
 	while (!markedForClose)
 	{
 		loops = 0;
-		//while (ticks < next_ticks && count<MAX)
+		//while (ticks > next_ticks && count<MAX)
 			// process input
 			// process logic
 		//
-		while (SDL_GetTicks() < nextTicks && loops < MaxFrameskip)
+		while (SDL_GetTicks() > nextTicks && loops < MaxFrameskip)
 		{
 			//Input
 			eventManager->processSDLEvents();
@@ -84,6 +84,12 @@ SceneBase::~SceneBase()
 void SceneBase::close()
 {
 	markedForClose = true;
+}
+
+void SceneBase::start()
+{
+	baseInit();
+	run();
 }
 
 void SceneBase::registerSceneObject(SceneObject * obj)

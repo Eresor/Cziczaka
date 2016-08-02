@@ -26,7 +26,7 @@ Vec2<int> RenderableObject::getPosition()
 	return position;
 }
 
-void RenderableObject::setPosition(Vec2<int>)
+void RenderableObject::setPosition(Vec2<int> position)
 {
 	this->position = position;
 }

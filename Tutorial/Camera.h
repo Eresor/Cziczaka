@@ -13,7 +13,15 @@ public:
 
 	~Camera();
 
-	void collect(std::vector<SceneRenderableObject*>& renderableObjects, std::vector<RenderableObject*> collected);
+	void collect(std::vector<SceneRenderableObject*>& renderableObjects, std::vector<RenderableObject*>& collected);
+
+	void setScale(float scale);
+
+	void setPosition(Vec2<float> pos);
+
+	Vec2<float> getPosition();
+
+	float getScale();
 
 protected:
 

@@ -20,21 +20,23 @@ public:
 
 	virtual void init()=0;
 
-	bool run();
-
 	~SceneBase();
 
 	void close();
 
+	void start();
+
 	void registerSceneObject(SceneObject *);
 
-private:
+protected:
 
 	bool markedForClose = false;
 
 	std::vector<SceneObject*> * sceneObjects;
 	
 	void Update();
+
+	bool run();
 
 	EventManager * eventManager;
 

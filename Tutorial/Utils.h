@@ -4,8 +4,13 @@ typedef unsigned int uint;
 
 #define SDL_BUTTON_ID_TYPE Sint32
 
-#define KEY_ SDL_SCANCODE_
+#define KEY(x) SDL_SCANCODE_##x
 
+enum MouseButton
+{
+	MOUSE_BUTTON_LEFT = SDL_BUTTON_LEFT,
+	MOUSE_BUTTON_RIGHT = SDL_BUTTON_RIGHT
+};
 
 struct Color
 {
@@ -21,6 +26,9 @@ struct Color
 
 		Uint32 color;
 	};
+
+
+	Color(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
 	static const Color COLOR_BLACK;
 	static const Color COLOR_WHITE;
